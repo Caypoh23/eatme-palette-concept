@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru" data-palette="graphite">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>EatMe — палитра без зелёного и иконки меню админки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="toolbar-title">
+        <strong>EatMe · палитра и иконки</strong>
+        <span>23.11.2026 · черновик для обсуждения</span>
+      </div>
+      <div class="control" role="group" aria-label="Палитра">
+        <span class="control-label">Палитра</span>
+        <div class="segmented" id="palette-switch"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>Те же экраны — другой цвет бренда</h1>
+        <p>
+          Здесь только настоящие экраны, без макетов «для красоты». Админка снята с
+          офлайн-превью, мобилка — из эталонных скриншотов приложения (golden-тесты по
+          макетам Figma). Перерисованы они с другим цветом бренда. Компоненты, шрифты и
+          отступы — наш UIKit как есть, меняются только значения цветовых токенов.
+        </p>
+        <p class="palette-note" id="palette-note"></p>
+      </section>
+
+      <section id="admin" class="board">
+        <div class="board-head">
+          <h2>Админка</h2>
+          <p>Меню слева — уже с новыми иконками разделов.</p>
+        </div>
+        <div class="viewer">
+          <img id="admin-main" class="viewer-main" alt="" />
+          <div class="thumbs" id="admin-thumbs"></div>
+        </div>
+      </section>
+
+      <section id="mobile" class="board">
+        <div class="board-head">
+          <h2>Мобилка</h2>
+          <p>Длинные экраны прокручиваются внутри телефона.</p>
+        </div>
+        <div class="phones" id="phones"></div>
+      </section>
+
+      <section id="tokens" class="board">
+        <div class="board-head">
+          <h2>Что меняется</h2>
+          <p>
+            Пять ролей цвета бренда — больше ничего. Статусы (успех, ошибка, внимание),
+            серые и белые остаются как были. Контраст белого текста на кнопке — по WCAG,
+            норма AA от 4,5:1.
+          </p>
+        </div>
+        <div class="table-wrap"><table class="tokens" id="token-table"></table></div>
+        <div class="findings">
+          <h3>Что останется зелёным при любой палитре</h3>
+          <ul>
+            <li><b>Логотип</b> — картинка, не токен. Нужен вариант логотипа под палитру.</li>
+            <li>
+              <b>3D-иллюстрации мобилки</b> (подбор программы, пустые состояния) — растровые
+              ассеты, их надо перерисовать в новом цвете.
+            </li>
+            <li>
+              <b>Плашка «Это примерное меню»</b> в мобилке красится цветом «успеха», а не
+              бренда. Если уходим от зелёного полностью, ей нужна своя роль.
+            </li>
+            <li><b>Статусы «успех»</b> — зелёные намеренно: это смысл, а не бренд.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="icons" class="board">
+        <div class="board-head">
+          <h2>Иконки меню админки</h2>
+          <p>
+            Уже в коде: у каждого пункта меню — залитая иконка раздела, у текущей страницы
+            она темнее. Иконки берут цвет текста, поэтому подходят к любой палитре.
+          </p>
+        </div>
+        <div class="glyphs" id="glyphs"></div>
+      </section>
+
+      <section id="rollout" class="board">
+        <div class="board-head">
+          <h2>Как переключить</h2>
+        </div>
+        <ol class="rollout">
+          <li>
+            <b>Выбираем палитру</b> — одну из вариантов выше или правку к ней: это пять
+            значений.
+          </li>
+          <li>
+            <b>Меняем один файл на платформу</b> — тему бренда в мобилке и токены бренда в
+            админке. Экраны не трогаем: они уже читают роли, так эти скриншоты и получены.
+          </li>
+          <li>
+            <b>Проверяем эталонные скриншоты</b> и выкатываем. Отдельно — логотип,
+            иллюстрации и роль плашки из списка выше.
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="foot">Черновик для обсуждения · данные на экранах тестовые и вымышленные</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
