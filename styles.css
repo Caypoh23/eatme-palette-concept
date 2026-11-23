@@ -423,3 +423,42 @@ figcaption {
   font-size: 11px;
   line-height: 14px;
 }
+
+.pages {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.pages a {
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: #3a3a3c;
+  font-size: 13px;
+  text-decoration: none;
+  background: #ebebef;
+}
+
+.pages a[aria-current='page'] {
+  color: #ffffff;
+  background: #1c1c1e;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+}
+
+.screen-switch {
+  justify-self: start;
+}
+
+.roles-table {
+  min-width: 640px;
+}
+
+.roles-table td {
+  font-size: 14px;
+}

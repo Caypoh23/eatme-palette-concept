@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>EatMe — шрифты мобилки: SF Pro на iOS, Inter на Android</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="toolbar-title">
+        <strong>EatMe · шрифты мобилки</strong>
+        <nav class="pages" aria-label="Страницы концепта">
+          <a href="./">Палитра</a><a href="fonts.html" aria-current="page">Шрифты</a>
+        </nav>
+      </div>
+      <div class="controls">
+        <div class="control" role="group" aria-label="Шрифт">
+          <span class="control-label">Шрифт</span>
+          <div class="segmented" id="font-switch"></div>
+        </div>
+        <div class="control" role="group" aria-label="Цвет">
+          <span class="control-label">Цвет</span>
+          <div class="segmented" id="color-switch"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>Те же экраны — системные шрифты</h1>
+        <p>
+          Настоящие экраны мобилки из эталонных скриншотов, перерисованные с другим
+          шрифтом. Размеры, межстрочные и начертания — из нашей шкалы UIKit, меняется только
+          гарнитура: на iOS — системный SF Pro (заголовки — Display, текст — Text, как делает
+          сама iOS), на Android — Inter. Сейчас в приложении два фирменных шрифта: Roboto Flex
+          в заголовках и Suisse Intl в тексте.
+        </p>
+        <p class="palette-note" id="font-note"></p>
+      </section>
+
+      <section class="board">
+        <div class="board-head">
+          <h2>Экраны</h2>
+          <p>Длинные экраны прокручиваются внутри телефона.</p>
+        </div>
+        <div class="phones" id="phones"></div>
+      </section>
+
+      <section class="board">
+        <div class="board-head">
+          <h2>Один экран — три шрифта</h2>
+          <p>Прокрутите любой телефон — остальные пойдут следом.</p>
+        </div>
+        <div class="segmented screen-switch" id="screen-switch"></div>
+        <div class="phones" id="compare"></div>
+      </section>
+
+      <section class="board">
+        <div class="board-head">
+          <h2>Шкала текста</h2>
+          <p>
+            Те же 19 ролей UIKit — размер, межстрочный и вес не меняются. Меняется только
+            семейство: одна строка в файле темы на платформу.
+          </p>
+        </div>
+        <div class="table-wrap"><table class="tokens roles-table" id="roles"></table></div>
+        <div class="findings">
+          <h3>Что важно знать</h3>
+          <ul>
+            <li>
+              <b>iOS</b> берёт SF Pro из системы — файл шрифта в приложение не кладём, лицензия
+              не нужна.
+            </li>
+            <li>
+              <b>Android</b> — Inter: бесплатный (OFL), кладём в приложение вместо Roboto Flex и
+              Suisse Intl.
+            </li>
+            <li>
+              <b>Нужна небольшая доработка UIKit:</b> сейчас шрифт один на все платформы, а
+              будет свой у iOS и Android.
+            </li>
+            <li>
+              <b>Админку</b> этот холст не трогает. Если захотим нейтральную админку — там
+              логично тоже Inter.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">Черновик для обсуждения · данные на экранах тестовые и вымышленные</footer>
+    <script src="fonts.js"></script>
+  </body>
+</html>
